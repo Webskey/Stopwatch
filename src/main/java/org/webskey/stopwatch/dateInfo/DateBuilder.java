@@ -4,22 +4,22 @@ import org.webskey.stopwatch.TimeFormatParser;
 import org.webskey.stopwatch.sql.Dao;
 import org.webskey.stopwatch.sql.Model;
 
-public class DateService {
+public class DateBuilder {
 
 	private DateInfo dateInfo;
 	private Dao dao;
 	private TimeFormatParser timeFormatParser;
 	private Model model;
 
-	public DateService(DateInfo dateInfo) {
+	public DateBuilder(DateInfo dateInfo) {
 		this.dateInfo = dateInfo;
-	}
-
-	public String getTimeInfo() {
 		dao = new Dao();
-		model = dao.getTime(dateInfo.setDate());
 		timeFormatParser = new TimeFormatParser();
 
+	}
+
+	public String getTimeInfo() {		
+		model = dao.getTime(dateInfo.setDate());
 		return timeFormatParser.getTimex(model.getHours(), model.getMinutes(), model.getSeconds());
 	}
 }

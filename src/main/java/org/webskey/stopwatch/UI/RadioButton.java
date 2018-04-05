@@ -11,19 +11,18 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
-import org.webskey.stopwatch.dateInfo.DateService;
-import org.webskey.stopwatch.dateInfo.ThisWeekDate;
-import org.webskey.stopwatch.dateInfo.TodayDate;
-import org.webskey.stopwatch.dateInfo.TotalDate;
+import org.webskey.stopwatch.dateInfo.DateFactory;
 
 public class RadioButton extends JPanel implements ItemListener{
 
 	private static final long serialVersionUID = 1L;
 	private JLabel totalTimeLabel;
+	private DateFactory dateFactory;
 
 	public RadioButton(JLabel totalTimeLabel) {
 
 		this.totalTimeLabel=totalTimeLabel;
+		dateFactory = new DateFactory();
 
 		ButtonGroup group = new ButtonGroup();
 
@@ -56,20 +55,8 @@ public class RadioButton extends JPanel implements ItemListener{
 		if (sel == ItemEvent.SELECTED) {
 
 			JRadioButton button = (JRadioButton) e.getSource();
-			DateService dateService;
 
-			switch (button.getText()) {
-			case "Today":
-				dateService = new DateService(new TodayDate());
-				break;
-			case "This week":
-				dateService = new DateService(new ThisWeekDate());
-				break;
-			default:
-				dateService = new DateService(new TotalDate());
-			}
-
-			totalTimeLabel.setText(dateService.getTimeInfo());
+			totalTimeLabel.setText(dateFactory.getTime(button.getText()));
 		}
 	}
 }

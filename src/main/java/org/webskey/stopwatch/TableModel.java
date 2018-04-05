@@ -19,6 +19,7 @@ public class TableModel extends DefaultTableModel {
 		super(data,column);
 		dao = new Dao();
 		timeFormatParser = new TimeFormatParser();
+		
 		List<Model> modelList = dao.getTableRows();
 		String[] row = new String[2];
 		for (Model model : modelList) {
