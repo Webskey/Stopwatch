@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JLabel;
 
-import org.webskey.stopwatch.TimeCounter;
+import org.webskey.stopwatch.time.TimeCounter;
 
 public class Ticker implements ActionListener{
 

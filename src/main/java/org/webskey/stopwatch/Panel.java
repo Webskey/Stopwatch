@@ -14,6 +14,7 @@ import org.webskey.stopwatch.UI.LabelTotalTime;
 import org.webskey.stopwatch.UI.Layout;
 import org.webskey.stopwatch.UI.RadioButton;
 import org.webskey.stopwatch.UI.Table;
+import org.webskey.stopwatch.UI.TableModel;
 import org.webskey.stopwatch.UI.TextField;
 import org.webskey.stopwatch.UI.Ticker;
 

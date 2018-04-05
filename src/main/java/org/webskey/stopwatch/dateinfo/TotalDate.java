@@ -1,4 +1,4 @@
-package org.webskey.stopwatch.dateInfo;
+package org.webskey.stopwatch.dateinfo;
 
 public class TotalDate implements DateInfo{
 	@Override

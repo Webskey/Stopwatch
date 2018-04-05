@@ -4,8 +4,8 @@ import java.awt.Font;
 
 import javax.swing.JLabel;
 
-import org.webskey.stopwatch.dateInfo.DateBuilder;
-import org.webskey.stopwatch.dateInfo.TodayDate;
+import org.webskey.stopwatch.dateinfo.DateBuilder;
+import org.webskey.stopwatch.dateinfo.TodayDate;
 
 public class LabelTotalTime extends JLabel {
 

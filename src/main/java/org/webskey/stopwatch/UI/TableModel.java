@@ -1,4 +1,4 @@
-package org.webskey.stopwatch;
+package org.webskey.stopwatch.UI;
 
 import java.util.List;
 
@@ -6,6 +6,7 @@ import javax.swing.table.DefaultTableModel;
 
 import org.webskey.stopwatch.sql.Dao;
 import org.webskey.stopwatch.sql.Model;
+import org.webskey.stopwatch.time.TimeFormatParser;
 
 public class TableModel extends DefaultTableModel {
 

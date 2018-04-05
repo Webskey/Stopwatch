@@ -1,8 +1,8 @@
-package org.webskey.stopwatch.dateInfo;
+package org.webskey.stopwatch.dateinfo;
 
-import org.webskey.stopwatch.TimeFormatParser;
 import org.webskey.stopwatch.sql.Dao;
 import org.webskey.stopwatch.sql.Model;
+import org.webskey.stopwatch.time.TimeFormatParser;
 
 public class DateBuilder {
 

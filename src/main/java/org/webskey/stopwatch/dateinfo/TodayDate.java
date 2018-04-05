@@ -1,4 +1,4 @@
-package org.webskey.stopwatch.dateInfo;
+package org.webskey.stopwatch.dateinfo;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;

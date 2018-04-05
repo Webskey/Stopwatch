@@ -9,7 +9,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
-import org.webskey.stopwatch.TableModel;
 import org.webskey.stopwatch.sql.Dao;
 
 public class ButtonSave extends JButton implements ActionListener{

@@ -1,4 +1,4 @@
-package org.webskey.stopwatch;
+package org.webskey.stopwatch.time;
 
 public class TimeCounter{
 	

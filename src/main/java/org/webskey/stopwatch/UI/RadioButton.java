@@ -11,7 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
-import org.webskey.stopwatch.dateInfo.DateFactory;
+import org.webskey.stopwatch.dateinfo.DateFactory;
 
 public class RadioButton extends JPanel implements ItemListener{
 

@@ -1,4 +1,4 @@
-package org.webskey.stopwatch;
+package org.webskey.stopwatch.time;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -7,7 +7,7 @@ import java.util.Date;
 
 public class TimeFormatParser {
 
-	public String getTimex(int hours,int minutes, int seconds) {
+	public String getTimex(int hours, int minutes, int seconds) {
 		
 		  int time = hours*3600+minutes*60+seconds;
 		  String amountOfSeconds = String.valueOf(time);
