@@ -14,6 +14,5 @@ public class LabelTotalTime extends JLabel {
 	public LabelTotalTime() {
 		DateBuilder dateBuilder = new DateBuilder(new TodayDate());
 		setText(dateBuilder.getTimeInfo());
-		setFont(new Font("", Font.BOLD, 15));
 	}
 }

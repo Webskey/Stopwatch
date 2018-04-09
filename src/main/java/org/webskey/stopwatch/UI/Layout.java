@@ -14,7 +14,8 @@ public class Layout extends GroupLayout{
 		setAutoCreateGaps(true);
 		// arg[3] = timeLabel
 		arg[3].setFont(new Font("", Font.BOLD, 25));
-		
+		//arg[8] = labelTotalTime
+		arg[8].setFont(new Font("", Font.BOLD, 20));
 		setHorizontalGroup(createParallelGroup()
 				.addComponent(arg[0])
 				.addComponent(arg[1])
@@ -27,7 +28,9 @@ public class Layout extends GroupLayout{
 				.addComponent(arg[7]) 
 				.addComponent(arg[10])
 				.addComponent(arg[9])
-				.addComponent(arg[8])
+				.addGroup(createSequentialGroup()
+				.addGap(5, 5, 5)
+				.addComponent(arg[8]))
 				);
 
 		setVerticalGroup(createSequentialGroup()
