@@ -8,3 +8,6 @@
 * MySQL
 * Spring
 * Eclipse
+
+### Screen of the program
+<img src="https://i.imgur.com/QKdy80F.png" alt="GUI screen">

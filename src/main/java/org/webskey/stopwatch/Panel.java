@@ -12,7 +12,7 @@ import org.webskey.stopwatch.UI.ButtonSave;
 import org.webskey.stopwatch.UI.ButtonStart;
 import org.webskey.stopwatch.UI.LabelTotalTime;
 import org.webskey.stopwatch.UI.Layout;
-import org.webskey.stopwatch.UI.RadioButton;
+import org.webskey.stopwatch.UI.RadioButtonTime;
 import org.webskey.stopwatch.UI.Table;
 import org.webskey.stopwatch.UI.TableModel;
 import org.webskey.stopwatch.UI.TextField;
@@ -46,11 +46,12 @@ public class Panel extends JPanel{
 
 		JButton buttonSave= new ButtonSave(activityLabel,timeLabel,table,activityTextField);
 
-		JPanel radio = new RadioButton(totalDayTime);
+		JPanel radio = new RadioButtonTime(totalDayTime);
 
-		Layout layout = new Layout(this,activityInfoLabel,activityTextField,timeInfoLabel,
+		Layout layout = new Layout(this, activityInfoLabel,activityTextField,timeInfoLabel,
 				timeLabel,buttonStart,buttonReset,buttonSave,jtable,totalDayTime,radio,totalTimeinfoLabel);
 
 		setLayout(layout);
+
 	}
 }

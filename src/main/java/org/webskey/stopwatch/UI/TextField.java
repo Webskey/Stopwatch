@@ -1,6 +1,5 @@
 package org.webskey.stopwatch.UI;
 
-import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -21,7 +20,6 @@ public class TextField extends JTextField implements ActionListener, DocumentLis
 		this.label=label;
 		getDocument().addDocumentListener(this);			
 		addActionListener(this);
-		setFont(new Font("", Font.ITALIC, 20));
 	}
 
 	@Override

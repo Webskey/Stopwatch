@@ -1,7 +1,5 @@
 package org.webskey.stopwatch.UI;
 
-import java.awt.Font;
-
 import javax.swing.JLabel;
 
 import org.webskey.stopwatch.dateinfo.DateBuilder;

@@ -5,7 +5,6 @@ import java.awt.event.WindowEvent;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JMenuBar;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -14,9 +13,6 @@ public class MainWindow extends JFrame {
 	private static final long serialVersionUID = 1L;
 
 	public MainWindow()  {
-
-		JMenuBar menubar = new Menu();
-		setJMenuBar(menubar);
 
 		JPanel panel = new Panel();
 		add(panel);
@@ -28,7 +24,7 @@ public class MainWindow extends JFrame {
 		setTitle("Stopwatch");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
-		
+
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
 				int confirmed = JOptionPane.showConfirmDialog(null, 

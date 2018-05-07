@@ -13,13 +13,13 @@ import javax.swing.JRadioButton;
 
 import org.webskey.stopwatch.dateinfo.DateFactory;
 
-public class RadioButton extends JPanel implements ItemListener{
+public class RadioButtonTime extends JPanel implements ItemListener{
 
 	private static final long serialVersionUID = 1L;
 	private JLabel totalTimeLabel;
 	private DateFactory dateFactory;
 
-	public RadioButton(JLabel totalTimeLabel) {
+	public RadioButtonTime(JLabel totalTimeLabel) {
 
 		this.totalTimeLabel=totalTimeLabel;
 		dateFactory = new DateFactory();
