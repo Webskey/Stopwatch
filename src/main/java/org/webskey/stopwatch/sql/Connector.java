@@ -4,18 +4,19 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-public class Connector {
+public enum Connector {
+	INSTANCE;
 
-	private static JdbcTemplate jdbcTemplate = setJdbcTemplate();
-	private static ApplicationContext applicationContext;
+	private  JdbcTemplate jdbcTemplate;
+	private ApplicationContext applicationContext;
 
-	private static JdbcTemplate setJdbcTemplate(){
+
+	private Connector() {
 		applicationContext = new ClassPathXmlApplicationContext("beans.xml");
-		JdbcTemplate jdbcTemplate = (JdbcTemplate) applicationContext.getBean("jdbcTemplate");
-		return jdbcTemplate;
-	}
+		jdbcTemplate = (JdbcTemplate) applicationContext.getBean("jdbcTemplate");
+	}	
 
-	public static JdbcTemplate getJdbcTemplate(){
+	public JdbcTemplate getJdbcTemplate(){
 		return jdbcTemplate;
 	}
 }

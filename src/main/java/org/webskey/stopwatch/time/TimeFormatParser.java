@@ -18,8 +18,6 @@ public class TimeFormatParser {
 		try {
 			startDate = secondsFormat.parse(amountOfSeconds);
 			String totalTimeString = finalFormat.format(startDate);
-			
-			System.out.println(totalTimeString);
 
 			int daysIntoHours = Integer.valueOf(totalTimeString.substring(0, 2))*24-24;
 			int totalHours = Integer.valueOf(totalTimeString.substring(3, 5))+daysIntoHours;

@@ -11,7 +11,7 @@ public class Dao{
 	private JdbcTemplate jdbcTemplate;
 
 	public Dao() {
-		this.jdbcTemplate=Connector.getJdbcTemplate();
+		this.jdbcTemplate=Connector.INSTANCE.getJdbcTemplate();
 	}
 
 	public void update(String activity, int hours, int minutes, int seconds) {
