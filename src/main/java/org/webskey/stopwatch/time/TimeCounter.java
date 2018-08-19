@@ -13,6 +13,7 @@ public class TimeCounter{
 		int minutes = Integer.valueOf(timeLabel.substring(timeLabel.length()-5, timeLabel.length()-3));
 		int seconds = Integer.valueOf(timeLabel.substring(timeLabel.length()-2, timeLabel.length()));
 		seconds++;
+		
 		return timeFormatParser.getTimex(hours, minutes, seconds);
 	}
 }
