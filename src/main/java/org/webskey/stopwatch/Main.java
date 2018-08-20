@@ -7,12 +7,12 @@ public class Main {
 
 		SplashScreen sw = new SplashScreen();
 		//  EventQueue.invokeLater(() -> {
-		MainWindow ex = new MainWindow();
-		if(ex.isVisible())
+		MainWindow mainWindow = new MainWindow();
+		if(mainWindow.isVisible())
 			sw.setVisible(false);
 
 		SysTray sysTray = new SysTray();
-		sysTray.addSystemTray();
+		sysTray.addSystemTray(mainWindow);
 		//    });
 	}
 }

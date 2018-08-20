@@ -25,6 +25,7 @@ public class MainWindow extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
 
+
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
 				int confirmed = JOptionPane.showConfirmDialog(null, 
@@ -36,6 +37,10 @@ public class MainWindow extends JFrame {
 				}else {
 					setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 				}
+			}
+
+			public void windowIconified(WindowEvent e) {			   
+				setVisible(false);
 			}
 		});
 	}
