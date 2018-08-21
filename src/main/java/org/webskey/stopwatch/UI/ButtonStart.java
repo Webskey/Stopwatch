@@ -1,10 +1,13 @@
 package org.webskey.stopwatch.UI;
 
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.Timer;
+
+import org.webskey.stopwatch.SysTray;
 
 public class ButtonStart extends JButton implements ActionListener{
 
@@ -23,10 +26,12 @@ public class ButtonStart extends JButton implements ActionListener{
 		if(timer.isRunning()) {
 			timer.stop();
 			this.setText("Start");
+			SysTray.getTrayIcon().setImage(Toolkit.getDefaultToolkit().createImage(this.getClass().getResource("/icon.png")));
 		} 
 		else {
 			this.setText("Pause");
 			timer.start();
+			SysTray.getTrayIcon().setImage(Toolkit.getDefaultToolkit().createImage(this.getClass().getResource("/gif.gif")));
 		}
 	}
 }

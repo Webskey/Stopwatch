@@ -1,6 +1,7 @@
 package org.webskey.stopwatch;
 
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -22,7 +23,10 @@ public class Panel extends JPanel{
 
 	private static final long serialVersionUID = -1l;
 
-	public Panel()  {
+	public Panel(JFrame parentFrame)  {
+
+		SysTray sysTray = new SysTray();
+		sysTray.addSystemTray(parentFrame);
 
 		JLabel activityInfoLabel = new JLabel("Activity:");
 		JLabel activityLabel = new JLabel(" ") ;
@@ -41,6 +45,11 @@ public class Panel extends JPanel{
 
 		Timer  timer = new Timer(1000,new Ticker(timeLabel,totalDayTime));
 		JButton buttonStart= new ButtonStart(timer);
+
+		sysTray.getTray().getPopupMenu().getItem(0).addActionListener(e -> {
+			buttonStart.doClick();
+		});		
+
 
 		JButton buttonReset = new ButtonReset(timeLabel);
 

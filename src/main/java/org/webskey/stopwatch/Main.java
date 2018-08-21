@@ -10,9 +10,6 @@ public class Main {
 		MainWindow mainWindow = new MainWindow();
 		if(mainWindow.isVisible())
 			sw.setVisible(false);
-
-		SysTray sysTray = new SysTray();
-		sysTray.addSystemTray(mainWindow);
 		//    });
 	}
 }

@@ -14,7 +14,7 @@ public class MainWindow extends JFrame {
 
 	public MainWindow()  {
 
-		JPanel panel = new Panel();
+		JPanel panel = new Panel(this);
 		add(panel);
 
 		this.setIconImage((new ImageIcon(this.getClass().getResource("/icon.png")).getImage()));
@@ -22,12 +22,12 @@ public class MainWindow extends JFrame {
 		pack();
 		setVisible(true);
 		setTitle("Stopwatch");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
-
 
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
+				setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				
 				int confirmed = JOptionPane.showConfirmDialog(null, 
 						"Are you sure you want to exit the program?", "Exit Program Message Box",
 						JOptionPane.YES_NO_OPTION);
