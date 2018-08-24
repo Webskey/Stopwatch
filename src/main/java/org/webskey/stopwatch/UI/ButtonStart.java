@@ -1,6 +1,5 @@
 package org.webskey.stopwatch.UI;
 
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -9,15 +8,23 @@ import javax.swing.Timer;
 
 import org.webskey.stopwatch.SysTray;
 
+import com.google.inject.Inject;
+
 public class ButtonStart extends JButton implements ActionListener{
 
 	private static final long serialVersionUID = -6665171712231629837L;
 	private Timer timer;
+	
+	@Inject
+	SysTray sysTray;
 
-	public ButtonStart(Timer timer) {
+	public ButtonStart() {
 		super("Start");
-		this.timer=timer;
 		addActionListener(this);
+	}
+	
+	public void setTimer(Timer timer) {
+		this.timer=timer;
 	}
 
 	@Override
@@ -26,12 +33,12 @@ public class ButtonStart extends JButton implements ActionListener{
 		if(timer.isRunning()) {
 			timer.stop();
 			this.setText("Start");
-			SysTray.getTrayIcon().setImage(Toolkit.getDefaultToolkit().createImage(this.getClass().getResource("/icon.png")));
+			sysTray.setTrayIcon("/icon.png");
 		} 
 		else {
 			this.setText("Pause");
 			timer.start();
-			SysTray.getTrayIcon().setImage(Toolkit.getDefaultToolkit().createImage(this.getClass().getResource("/gif.gif")));
+			sysTray.setTrayIcon("/gif.gif");
 		}
 	}
 }

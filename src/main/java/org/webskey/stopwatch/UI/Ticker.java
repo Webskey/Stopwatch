@@ -1,7 +1,6 @@
 package org.webskey.stopwatch.UI;
 
 import java.awt.Toolkit;
-import java.awt.TrayIcon.MessageType;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -10,15 +9,23 @@ import javax.swing.JLabel;
 import org.webskey.stopwatch.SysTray;
 import org.webskey.stopwatch.time.TimeCounter;
 
+import com.google.inject.Inject;
+import com.google.inject.name.Named;
+
 public class Ticker implements ActionListener{
 
+	@Inject @Named("timeLabel")
 	private JLabel timeLabel;
+	
+	@Inject @Named("totalDayTime")
 	private JLabel totalDayTime;
-	private TimeCounter timeCounter;
 
-	public Ticker(JLabel timeLabel,JLabel totalDayTime) {
-		this.timeLabel = timeLabel;
-		this.totalDayTime = totalDayTime;
+	@Inject
+	private SysTray sysTray;
+	
+	private TimeCounter timeCounter;
+	
+	public Ticker() {
 		this.timeCounter = new TimeCounter();
 	}
 
@@ -30,11 +37,11 @@ public class Ticker implements ActionListener{
 		String totalTimeIncremented = timeCounter.doTiming(totalTime);
 		
 		if(totalTimeIncremented.matches(".+:[03]0:00")) {
-			SysTray.getTrayIcon().displayMessage("Stopwatch", "Time spent today:\n" + totalTimeIncremented, MessageType.INFO);
+			sysTray.displayTrayMessage(totalTimeIncremented);
 			Toolkit.getDefaultToolkit().beep();
 		}
 		
-		SysTray.getTrayIcon().setToolTip(totalTimeIncremented);
+		sysTray.setToolTip(totalTimeIncremented);
 		
 		totalDayTime.setText(totalTimeIncremented);
 	}

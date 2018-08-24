@@ -74,4 +74,12 @@ public class SysTray {
 		trayIcon.displayMessage("Stopwatch", "Time spent today:\n" + time, MessageType.INFO);
 		Toolkit.getDefaultToolkit().beep();
 	}
+	
+	public void setToolTip(String tooltip) {
+		trayIcon.setToolTip(tooltip);
+	}
+	
+	public void setTrayIcon(String image) {
+		trayIcon.setImage(Toolkit.getDefaultToolkit().createImage(this.getClass().getResource(image)));
+	}
 }

@@ -19,6 +19,9 @@ import org.webskey.stopwatch.UI.TableModel;
 import org.webskey.stopwatch.UI.TextField;
 import org.webskey.stopwatch.UI.Ticker;
 
+import com.google.inject.Guice;
+import com.google.inject.Injector;
+
 public class Panel extends JPanel{
 
 	private static final long serialVersionUID = -1l;
@@ -43,8 +46,12 @@ public class Panel extends JPanel{
 
 		JLabel totalDayTime = new LabelTotalTime();
 
-		Timer  timer = new Timer(1000,new Ticker(timeLabel,totalDayTime));
-		JButton buttonStart= new ButtonStart(timer);
+		Injector injectorLabel = Guice.createInjector(new TickerModule(timeLabel, totalDayTime));
+		Timer  timer = new Timer(1000, injectorLabel.getInstance(Ticker.class));
+
+		Injector injector = Guice.createInjector(new ButtonStartModule());
+		ButtonStart buttonStart = injector.getInstance(ButtonStart.class);
+		buttonStart.setTimer(timer);
 
 		sysTray.getTray().getPopupMenu().getItem(0).addActionListener(e -> {
 			buttonStart.doClick();
